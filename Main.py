@@ -149,7 +149,7 @@ app.layout = html.Div([
             ),
     dcc.Graph(id='graph1', figure={
         'data': [
-            {'x': ['CSED', 'CSED_derabassi', 'Chemical', 'EIC', 'ECE', 'Mechanical', 'Biotech', 'Civil', 'Distant_Edu'], 'y': data, 'type': 'bar', 'name': 'SF'},
+            {'x': ['CSED', 'CSED_derabassi', 'Chemical', 'EIC', 'ECE', 'Mechanical', 'Biotech', 'Civil', 'Distant_Edu'], 'y': dept, 'type': 'bar', 'name': 'SF'},
         ],
         'layout': {
             'title': 'Year-Wise Data Visualization',
