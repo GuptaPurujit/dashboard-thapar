@@ -118,7 +118,16 @@ app.layout = html.Div([
         placeholder = 'Select Year',
         value = '0'
             ),
-    dcc.Graph(id='graph2'),  
+    dcc.Graph(id='graph2', figure={
+        'data': [
+            {'x': years, 'y': dept, 'type': 'bar', 'name': 'SF'}
+
+        ],
+        'layout': {
+            'title': 'Department-Wise Data Visualization',
+            'paper_bgcolor':"#D6EAF8"
+        }
+    }),  
     html.Label('Choose a Department'),
     dcc.Dropdown(
         id = 'first-dropdown',
@@ -138,7 +147,16 @@ app.layout = html.Div([
         placeholder = 'Select a Department',
         value = '0'
             ),
-    dcc.Graph(id='graph1'),
+    dcc.Graph(id='graph1', figure={
+        'data': [
+            {'x': ['CSED', 'CSED_derabassi', 'Chemical', 'EIC', 'ECE', 'Mechanical', 'Biotech', 'Civil', 'Distant_Edu'], 'y': data, 'type': 'bar', 'name': 'SF'},
+        ],
+        'layout': {
+            'title': 'Year-Wise Data Visualization',
+            'paper_bgcolor':"#D6EAF8"
+        }
+        
+    }),
     html.Div([
     html.Br(),
         html.Div([html.A('Developed by Misha Aggarwal', href='https://github.com/mishaaggarwal15/Thapar-Research-Paper-Dashboard', target='_blank')]),
