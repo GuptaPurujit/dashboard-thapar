@@ -11,7 +11,6 @@ from dash.dependencies import Input, Output
 app = dash.Dash()
 server = app.server
 
-
 myheading1 = 'Thapar Research Paper Dashboard'
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
@@ -43,7 +42,6 @@ def update_output_1(value):
             df = pd.read_csv('final_data/{}'.format(filename))
             sum.append(df['count'].sum())
         sum_years_1.append(sum)
-    print(sum_years_1)
     for i in range(4):
         dept.append(sum_years_1[i][int(value)])
     
@@ -118,16 +116,7 @@ app.layout = html.Div([
         placeholder = 'Select Year',
         value = '0'
             ),
-    dcc.Graph(id='graph2', figure={
-        'data': [
-            {'x': years, 'y': dept, 'type': 'bar', 'name': 'SF'}
-
-        ],
-        'layout': {
-            'title': 'Department-Wise Data Visualization',
-            'paper_bgcolor':"#D6EAF8"
-        }
-    }),  
+    dcc.Graph(id='graph2'),  
     html.Label('Choose a Department'),
     dcc.Dropdown(
         id = 'first-dropdown',
@@ -147,16 +136,7 @@ app.layout = html.Div([
         placeholder = 'Select a Department',
         value = '0'
             ),
-    dcc.Graph(id='graph1', figure={
-        'data': [
-            {'x': ['CSED', 'CSED_derabassi', 'Chemical', 'EIC', 'ECE', 'Mechanical', 'Biotech', 'Civil', 'Distant_Edu'], 'y': dept, 'type': 'bar', 'name': 'SF'},
-        ],
-        'layout': {
-            'title': 'Year-Wise Data Visualization',
-            'paper_bgcolor':"#D6EAF8"
-        }
-        
-    }),
+    dcc.Graph(id='graph1'),
     html.Div([
     html.Br(),
         html.Div([html.A('Developed by Misha Aggarwal', href='https://github.com/mishaaggarwal15/Thapar-Research-Paper-Dashboard', target='_blank')]),
