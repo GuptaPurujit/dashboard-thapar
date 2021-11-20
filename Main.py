@@ -9,7 +9,6 @@ from dash.dependencies import Input, Output
 
 
 app = dash.Dash()
-server = app.server
 
 myheading1 = 'Thapar Research Paper Dashboard'
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
